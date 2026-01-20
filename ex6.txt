@@ -1,0 +1,9 @@
+mkdir mygit
+cd mygit
+git init
+echo "Hii,Welcome to GIT"> README.md
+git add README.md
+cat README.md
+git commit -m "Initial commit: ADD README file"
+sed -i 's/GIT/Computer/g' README.md
+cat README.md

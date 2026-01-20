@@ -1,0 +1,8 @@
+mkdir mygitproject
+cd mygitproject
+git init
+pwd
+echo "myfirst git project">readme.md
+git add readme.md
+git commit-m "initial commit:add readme
+cat readme.md
