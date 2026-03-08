@@ -1,0 +1,107 @@
+ mkdir demo
+cd demo
+
+git init
+Initialized empty Git repository in /Psgcaslabs/2024BScIT/24bit034/demo/.git/
+
+ echo "Hello, Start your content" > file.txt
+
+ cat file.txt
+Hello, Start your content
+
+ cd ..
+
+mkdir demo.git
+cd demo.git
+
+ git init --bare
+Initialized empty Git repository in /Psgcaslabs/2024BScIT/24bit034/demo.git/__bare/.git/
+
+ cd ../demo
+
+ git remote add origin "Z:\demo.git"
+
+ git remote -v
+origin  Z:\demo.git (fetch)
+origin  Z:\demo.git (push)
+
+ git add .
+warning: in the working copy of 'file.txt', LF will be replaced by CRLF the next time Git touches it
+
+ git commit -m "file created"
+[master (root-commit) 988c31c] file created
+Committer: 24bit034 <24bit034@labs.psgcas.com>
+
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+
+You can suppress this message by setting them explicitly. Run:
+
+git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+git commit --amend --reset-author
+
+1 file changed, 1 insertion(+)
+create mode 100644 file.txt
+
+ git push origin master
+fatal: 'Z:\demo.git' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+ ls
+file.txt
+
+ git checkout -b new
+Switched to a new branch 'new'
+
+ echo "Content" > file2.txt
+
+ cat file2.txt
+Content
+
+ git add .
+warning: in the working copy of 'file2.txt', LF will be replaced by CRLF the next time Git touches it
+
+git commit -m "file2.txt created"
+[new c7a339] file2.txt created
+Committer: 24bit034 <24bit034@labs.psgcas.com>
+
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+
+You can suppress this message by setting them explicitly. Run:
+
+git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+git commit --amend --reset-author
+
+1 file changed, 1 insertion(+)
+create mode 100644 file2.txt
+
+ git push origin new
+fatal: 'Z:\demo.git' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+ ls
+file.txt  file2.txt
+
+ git checkout master
+Switched to branch 'master'
+
+ls
+file.txt
+
+ cat file.txt file2.txt > com.txt
+
+ ls
+com.txt  file.txt  file2.txt

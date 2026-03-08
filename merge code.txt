@@ -1,0 +1,65 @@
+ mkdir demo
+cd demo
+
+git init
+
+
+ echo "Hello, Start your content" > file.txt
+
+ cat file.txt
+Hello, Start your content
+
+ cd ..
+
+mkdir demo.git
+cd demo.git
+
+ git init --bare
+
+
+ cd ../demo
+
+ git remote add origin "Z:\demo.git"
+
+ git remote -v
+
+
+ git add .
+
+
+ git commit -m "file created"
+ git push origin master
+
+ ls
+file.txt
+
+ git checkout -b new
+
+
+ echo "Content" > file2.txt
+
+ cat file2.txt
+Content
+
+ git add .
+
+
+git commit -m "file2.txt created"
+
+ git push origin new
+
+
+
+ ls
+file.txt  file2.txt
+
+ git checkout master
+Switched to branch 'master'
+
+ls
+file.txt
+
+ cat file.txt file2.txt > com.txt
+
+ ls
+com.txt  file.txt  file2.txt
